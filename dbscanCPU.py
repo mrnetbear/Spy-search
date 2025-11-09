@@ -153,7 +153,7 @@ def random_walk(G, start, length=40):
         walk.append(cur)
     return walk
 
-logging.info("Генерация случайных прогулок (Node2Vec-подобно)")
+logging.info("Генерация случайных прогулок")
 nodes = list(G.nodes())
 walks = []
 walks_per_node = 10
@@ -233,7 +233,7 @@ for cid, (score, st) in scores.items():
         suspicious.append((cid, score, st))
 suspicious.sort(key=lambda x: (-x[1], -x[2]["size"]))
 
-print("Найденные группы с высокой связанностью (возможные ко-тревелеры):")
+print("Найденные группы с высокой связанностью:")
 for cid, score, st in suspicious:
     members = clusters[cid]
     print(f"\nКластер {cid}: size={st['size']}, score={score:.2f}, avg_w={st['avg_w']:.2f}, avg_co_flights={st['avg_co_flights']:.2f}")

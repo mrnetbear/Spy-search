@@ -42,9 +42,9 @@ OUTPUT_CSV = "YourBoardingPassDotAero-2017-01-01.csv"
 # Режим записи: "rows_per_sheet" — по строке на лист; "single_row_merged" — одна строка
 MODE = "rows_per_sheet"
 
-# Фильтр листов (используются glob-паттерны: *, ?). Пусто — все листы.
-SHEET_INCLUDE = []          # например: ["2024-*", "Sheet*"]
-SHEET_EXCLUDE = []          # например: ["Архив*", "Tmp*"]
+# Фильтр листов
+SHEET_INCLUDE = []          
+SHEET_EXCLUDE = []          
 
 # Базовое сопоставление применится к каждому листу
 MAPPING_DEFAULT = {
@@ -67,9 +67,7 @@ MAPPING_DEFAULT = {
 }
 
 # Переопределения/дополнения для конкретных листов
-MAPPING_OVERRIDES = {
-    # "Sheet2": {"D5": "Seat", "C3": "PNR"},
-}
+MAPPING_OVERRIDES = {}
 
 def extract_from_workbook_many(xlsx_path, mapping_default, mapping_overrides=None,
                                include=None, exclude=None, mode="rows_per_sheet"):

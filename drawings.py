@@ -45,7 +45,7 @@ fig = px.scatter_geo(df_unique,
                      hover_name="ARRIVAL_CITY",
                      hover_data=["DATE", "FLIGHT", "DEPARTURE_CITY"],
                      projection="natural earth",
-                     title="✈️ Маршруты перелётов Frequent Flyers",
+                     title="Маршруты перелётов Frequent Flyers",
                      size_max=15)
 
 # Увеличиваем размер точек
